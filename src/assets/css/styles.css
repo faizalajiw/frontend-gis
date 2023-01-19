@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #BCCAD8 !important;
+  background: #f1f1f1 !important;
 }
 
 body.modal-open .container {
@@ -30,7 +30,7 @@ body.modal-open footer {
   filter: blur(2.5px);
 }
 
-.mt-80 {
+/* .mt-80 {
   margin-top: 80px;
 }
 
@@ -44,6 +44,11 @@ body.modal-open footer {
 
 .mt-150 {
   margin-top: 150px;
+} */
+
+.my-card {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 #wrapper {
@@ -125,6 +130,17 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 .navbar-light .navbar-nav .nav-link:hover {
   color: white;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #00042D;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #19227A;
 }
 
 .btn-success {
