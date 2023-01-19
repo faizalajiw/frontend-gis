@@ -1,11 +1,14 @@
 import React from "react";
-import { Toaster } from 'react-hot-toast';
+//react notification
+import { Toaster } from "react-hot-toast";
+//import
+import Routes from "./routes/routes";
 
 function App() {
   return (
     <React.Fragment>
-        <Toaster/>
-        <h1>Test 123</h1>
+      <Toaster />
+      <Routes />
     </React.Fragment>
   );
 }
