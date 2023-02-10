@@ -4,6 +4,9 @@ import PaginationComponent from "../../../components/utilities/Pagination";
 import Api from "../../../api";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 function CategoriesIndex() {
   document.title = "Kategori Admin";
@@ -15,7 +18,7 @@ function CategoriesIndex() {
   const [search, setSearch] = useState("");
   const token = Cookies.get("token");
 
-  //function "fetchData"
+  //function "FETCH DATA"
   const fetchData = async (pageNumber, searchData) => {
     const searchQuery = searchData ? searchData : search;
     const page = pageNumber ? pageNumber : currentPage;
@@ -50,7 +53,7 @@ function CategoriesIndex() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  //function "searchHandler"
+  //function "SEARCH"
   const searchHandlder = (e) => {
     e.preventDefault();
 
@@ -58,8 +61,48 @@ function CategoriesIndex() {
     fetchData(1, search)
   }
 
+  //function "DELETE"
+  const deleteCategory = (id) => {
+    //show confirm alert
+    confirmAlert({
+      title: 'Hapus Data',
+      message: 'Ingin menghapus data?',
+      buttons: [{
+        label: 'Ya',
+        onClick: async () => {
+          await Api.delete(`/api/admin/categories/${id}`, {
+            headers: {
+              //header Bearer + Token
+              Authorization: `Bearer ${token}`,
+            }
+          })
+            .then(() => {
+              //show toast
+              toast.success("Data berhasil dihapus", {
+                duration: 3000,
+                position: "top-right",
+                style: {
+                  borderRadius: '10px',
+                  background: '#333',
+                  color: '#fff',
+                },
+              });
+
+              //call function "fetchData"
+              fetchData();
+            })
+        }
+      },
+      {
+        label: 'Batal',
+        onClick: () => { }
+      }
+      ]
+    });
+  }
+
   return (
-    <React.Fragment>
+    <>
       <LayoutAdmin>
         <div className="row mt-4">
           <div className="col-12">
@@ -68,6 +111,7 @@ function CategoriesIndex() {
                 <span className="fw-bold">Kategori</span>
               </div>
               <div className="card-body">
+                {/* SEARCH */}
                 <form onSubmit={searchHandlder} className="form-group">
                   <div className="input-group mb-3">
                     <Link to="/admin/categories/create" className="btn btn-md btn-success"><i className="fa fa-plus-circle"> </i></Link>
@@ -75,6 +119,9 @@ function CategoriesIndex() {
                     <button type="submit" className="btn btn-md btn-success"><i className="fa fa-search"></i> Cari</button>
                   </div>
                 </form>
+                {/* END SEARCH */}
+
+                {/* TABEL */}
                 <div className="table-responsive">
                   <table className="table table-bordered table-striped table-hovered">
                     <thead>
@@ -93,7 +140,12 @@ function CategoriesIndex() {
                             <img src={category.image} alt="" width="50" />
                           </td>
                           <td className="text-center">{category.name}</td>
-                          <td className="text-center"></td>
+                          <td className="text-center">
+                            <button
+                              onClick={() => deleteCategory(category.id)}
+                              className="btn btn-sm btn-danger"><i className="fa fa-trash"></i>
+                            </button>
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -106,12 +158,13 @@ function CategoriesIndex() {
                     position="end"
                   />
                 </div>
+                {/* END TABEL */}
               </div>
             </div>
           </div>
         </div>
       </LayoutAdmin>
-    </React.Fragment>
+    </>
   )
 }
 
