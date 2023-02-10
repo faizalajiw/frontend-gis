@@ -87,7 +87,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   overflow: hidden !important;
 }
 
-*[dir="rtl"] .mfs-3,
+*[dir="rtl"] .mfs-6,
 html:not([dir="rtl"]) .mfe-3 {
   margin-right: 1rem !important;
 }
@@ -140,7 +140,7 @@ html:not([dir="rtl"]) .mfe-3 {
   /* background-color: #116f44;
   border-color: #116f44; */
   background-color: #136f58;
-  border-color: #00042d;
+  border-color: #136f58;
 }
 
 .btn-success:active {

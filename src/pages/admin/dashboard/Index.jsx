@@ -55,14 +55,14 @@ function Dashboard() {
             <div className="card border-0 shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
-                  className="bg-primary py-4 px-5 mfe-3"
+                  className="bg-dark py-4 px-5 mfe-3"
                   style={{ width: "130px" }}
                 >
                   <i className="fas fa-folder fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-primary">{categories}</div>
-                  <div className="text-muted font-weight-bold small">
+                  <div className="text-value text-dark fs-4">{categories}</div>
+                  <div className="text-muted font-weight-bold fs-6">
                     Kategori
                   </div>
                 </div>
@@ -79,8 +79,8 @@ function Dashboard() {
                   <i className="fas fa-map-marked-alt fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-success">{places}</div>
-                  <div className="text-muted font-weight-bold small">
+                  <div className="text-value text-success fs-4">{places}</div>
+                  <div className="text-muted font-weight-bold fs-6">
                     Tempat
                   </div>
                 </div>
@@ -91,14 +91,14 @@ function Dashboard() {
             <div className="card border-0 rounded shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
-                  className="bg-primary py-4 px-5 mfe-3"
+                  className="bg-dark py-4 px-5 mfe-3"
                   style={{ width: "130px" }}
                 >
                   <i className="fas fa-images fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-primary">{sliders}</div>
-                  <div className="text-muted font-weight-bold small">
+                  <div className="text-value text-dark fs-4">{sliders}</div>
+                  <div className="text-muted font-weight-bold fs-6">
                     Sliders
                   </div>
                 </div>
@@ -115,8 +115,8 @@ function Dashboard() {
                   <i className="fas fa-users fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-success">{users}</div>
-                  <div className="text-muted font-weight-bold small">Users</div>
+                  <div className="text-value text-success fs-4">{users}</div>
+                  <div className="text-muted font-weight-bold fs-6">Users</div>
                 </div>
               </div>
             </div>
