@@ -86,8 +86,10 @@ export default function CreateCategory() {
         <div className="row mt-4">
           <div className="col-12">
             <div className="card border-0 rounded shadow-sm border-top-success">
+              {/* FORM INPUT */}
               <div className="card-body">
                 <form onSubmit={storeCategory}>
+                  {/* FORM IMAGE */}
                   <div className="mb-3">
                     <label className="form-label fw-bold">Gambar</label>
                     <input type="file" className="form-control" onChange={handleFileChange} />
@@ -97,6 +99,9 @@ export default function CreateCategory() {
                       {validation.image[0]}
                     </div>
                   )}
+                  {/* END FORM IMAGE */}
+
+                  {/* FORM CATEGORY */}
                   <div className="mb-3">
                     <label className="form-label fw-bold">Nama Kategori</label>
                     <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
@@ -106,6 +111,9 @@ export default function CreateCategory() {
                       {validation.name[0]}
                     </div>
                   )}
+                  {/* END FORM CATEGORY */}
+
+                  {/* BUTTON */}
                   <div>
                     <button type="submit" className="btn btn-md btn-success me-2"><i className="fa fa-save"></i>  Simpan</button>
                     <button type="reset" className="btn btn-md btn-warning me-2"><i className="fa fa-redo"></i>  Reset</button>
@@ -113,8 +121,10 @@ export default function CreateCategory() {
                       <button type="reset" className="btn btn-md btn-dark"><i class="fas fa-arrow-circle-left"></i>  Kembali</button>
                     </Link>
                   </div>
+                  {/* END BUTTON */}
                 </form>
               </div>
+              {/* END FORM INPUT */}
             </div>
           </div>
         </div>
