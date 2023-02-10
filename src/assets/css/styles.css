@@ -78,8 +78,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 .list-group-item-light.list-group-item-action.active {
-  color: #636464;
-  background-color: #e5e5e5;
+  color: #e5e5e5;
+  background-color: #00042d;
   border-color: #e5e5e5;
 }
 
