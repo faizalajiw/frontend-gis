@@ -107,15 +107,12 @@ function CategoriesIndex() {
         <div className="row mt-4">
           <div className="col-12">
             <div className="card border-0 rounded shadow-sm border-top-success">
-              <div className="card-header">
-                <span className="fw-bold">Kategori</span>
-              </div>
               <div className="card-body">
                 {/* SEARCH */}
                 <form onSubmit={searchHandlder} className="form-group">
                   <div className="input-group mb-3">
                     <Link to="/admin/categories/create" className="btn btn-md btn-success"><i className="fa fa-plus-circle"> </i></Link>
-                    <input type="text" className="form-control" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="cari detail kategori" />
+                    <input type="text" className="form-control" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Cari nama kategori" />
                     <button type="submit" className="btn btn-md btn-success"><i className="fa fa-search"></i> Cari</button>
                   </div>
                 </form>
@@ -128,7 +125,7 @@ function CategoriesIndex() {
                       <tr className="text-center">
                         <th scope="col">No</th>
                         <th scope="col">Gambar</th>
-                        <th scope="col">Detail Kategori</th>
+                        <th scope="col">Nama Kategori</th>
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>

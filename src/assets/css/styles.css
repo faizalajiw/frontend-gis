@@ -131,15 +131,15 @@ html:not([dir="rtl"]) .mfe-3 {
   color: #fff;
   /* background-color: #116f44;
   border-color: #116f44; */
-  background-color: #00042d;
-  border-color: #00042d;
+  background-color: #1F8A70;
+  border-color: #1F8A70;
 }
 
 .btn-success:hover {
   color: #fff;
   /* background-color: #116f44;
   border-color: #116f44; */
-  background-color: #00042d;
+  background-color: #136f58;
   border-color: #00042d;
 }
 
@@ -147,8 +147,8 @@ html:not([dir="rtl"]) .mfe-3 {
   color: #fff;
   /* background-color: #116f44;
   border-color: #116f44; */
-  background-color: #00042d !important;
-  border-color: #00042d !important;
+  background-color: #1F8A70 !important;
+  border-color: #1F8A70 !important;
 }
 
 .btn-success:disabled {
