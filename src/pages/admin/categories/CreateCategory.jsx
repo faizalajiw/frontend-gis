@@ -99,7 +99,7 @@ export default function CreateCategory() {
                   )}
                   <div className="mb-3">
                     <label className="form-label fw-bold">Nama Kategori</label>
-                    <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter Category Name" />
+                    <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   {validation.name && (
                     <div className="alert alert-danger">
