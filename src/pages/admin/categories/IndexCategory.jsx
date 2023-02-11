@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-function CategoriesIndex() {
+export default function IndexCategory() {
   document.title = "Kategori Admin";
   //state 
   const [categories, setCategories] = useState([]);
@@ -16,6 +16,8 @@ function CategoriesIndex() {
   const [perPage, setPerPage] = useState(0);
   const [total, setTotal] = useState(0);
   const [search, setSearch] = useState("");
+
+  //token
   const token = Cookies.get("token");
 
   //function "FETCH DATA"
@@ -107,6 +109,9 @@ function CategoriesIndex() {
         <div className="row mt-4">
           <div className="col-12">
             <div className="card border-0 rounded shadow-sm border-top-success">
+              <div className="card-header">
+                <span className="fw-semibold"><i class="fas fa-folder me-2"></i> KATEGORI</span>
+              </div>
               <div className="card-body">
                 {/* SEARCH */}
                 <form onSubmit={searchHandlder} className="form-group">
@@ -123,10 +128,10 @@ function CategoriesIndex() {
                   <table className="table table-bordered table-striped table-hovered">
                     <thead>
                       <tr className="text-center">
-                        <th scope="col">No</th>
-                        <th scope="col">Gambar</th>
-                        <th scope="col">Nama Kategori</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col" className="fw-semibold">No</th>
+                        <th scope="col" className="fw-semibold">Gambar</th>
+                        <th scope="col" className="fw-semibold">Nama Kategori</th>
+                        <th scope="col" className="fw-semibold">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -167,5 +172,3 @@ function CategoriesIndex() {
     </>
   )
 }
-
-export default CategoriesIndex
