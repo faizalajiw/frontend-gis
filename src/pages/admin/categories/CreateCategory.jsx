@@ -86,10 +86,10 @@ export default function CreateCategory() {
         <div className="row mt-4">
           <div className="col-12">
             <div className="card border-0 rounded shadow-sm border-top-success">
-              {/* FORM INPUT */}
               <div className="card-header">
                 <span className="fw-semibold"><i className="fa fa-folder me-2"></i>TAMBAH KATEGORI</span>
               </div>
+              {/* FORM INPUT */}
               <div className="card-body">
                 <form onSubmit={storeCategory}>
                   {/* FORM IMAGE */}

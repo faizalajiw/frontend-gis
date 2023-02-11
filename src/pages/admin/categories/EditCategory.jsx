@@ -122,8 +122,10 @@ export default function EditCategory() {
                             <div className="card-header">
                                 <span className="fw-semibold"><i className="fa fa-folder me-2"></i>EDIT KATEGORI</span>
                             </div>
+                            {/* FORM INPUT */}
                             <div className="card-body">
                                 <form onSubmit={updateCategory}>
+                                    {/* FORM IMAGE */}
                                     <div className="mb-3">
                                         <label className="form-label fw-semibold">Gambar</label>
                                         <input type="file" className="form-control" onChange={handleFileChange} />
@@ -133,6 +135,9 @@ export default function EditCategory() {
                                             {validation.image[0]}
                                         </div>
                                     )}
+                                    {/* END FORM IMAGE */}
+
+                                    {/* FORM CATEGORY */}
                                     <div className="mb-3">
                                         <label className="form-label fw-semibold">Nama Kategori</label>
                                         <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter Category Name" />
@@ -142,6 +147,9 @@ export default function EditCategory() {
                                             {validation.name[0]}
                                         </div>
                                     )}
+                                    {/* END FORM CATEGORY */}
+
+                                    {/* BUTTON */}
                                     <div>
                                         <button type="submit" className="btn btn-md btn-success me-2"><i className="fas fa-save"></i>  Simpan</button>
                                         <button type="reset" className="btn btn-md btn-warning me-2"><i className="fas fa-redo"></i>  Reset</button>
@@ -149,8 +157,10 @@ export default function EditCategory() {
                                             <button type="reset" className="btn btn-md btn-dark"><i class="fas fa-arrow-circle-left"></i>  Kembali</button>
                                         </Link>
                                     </div>
+                                    {/* END BUTTON */}
                                 </form>
                             </div>
+                            {/* END FORM INPUT */}
                         </div>
                     </div>
                 </div>
