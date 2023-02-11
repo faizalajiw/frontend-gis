@@ -138,6 +138,9 @@ function CategoriesIndex() {
                           </td>
                           <td className="text-center">{category.name}</td>
                           <td className="text-center">
+                            <Link to={`/admin/categories/edit/${category.id}`}
+                              className="btn btn-sm btn-primary me-2"><i className="fa fa-pencil-alt"></i>
+                            </Link>
                             <button
                               onClick={() => deleteCategory(category.id)}
                               className="btn btn-sm btn-danger"><i className="fa fa-trash"></i>

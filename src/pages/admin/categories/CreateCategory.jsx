@@ -87,11 +87,14 @@ export default function CreateCategory() {
           <div className="col-12">
             <div className="card border-0 rounded shadow-sm border-top-success">
               {/* FORM INPUT */}
+              <div className="card-header">
+                <span className="fw-semibold"><i className="fa fa-folder me-2"></i>TAMBAH KATEGORI</span>
+              </div>
               <div className="card-body">
                 <form onSubmit={storeCategory}>
                   {/* FORM IMAGE */}
                   <div className="mb-3">
-                    <label className="form-label fw-bold">Gambar</label>
+                    <label className="form-label fw-semibold">Gambar</label>
                     <input type="file" className="form-control" onChange={handleFileChange} />
                   </div>
                   {validation.image && (
@@ -103,7 +106,7 @@ export default function CreateCategory() {
 
                   {/* FORM CATEGORY */}
                   <div className="mb-3">
-                    <label className="form-label fw-bold">Nama Kategori</label>
+                    <label className="form-label fw-semibold">Nama Kategori</label>
                     <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   {validation.name && (
@@ -115,8 +118,8 @@ export default function CreateCategory() {
 
                   {/* BUTTON */}
                   <div>
-                    <button type="submit" className="btn btn-md btn-success me-2"><i className="fa fa-save"></i>  Simpan</button>
-                    <button type="reset" className="btn btn-md btn-warning me-2"><i className="fa fa-redo"></i>  Reset</button>
+                    <button type="submit" className="btn btn-md btn-success me-2"><i className="fas fa-save"></i>  Simpan</button>
+                    <button type="reset" className="btn btn-md btn-warning me-2"><i className="fas fa-redo"></i>  Reset</button>
                     <Link to="/admin/categories">
                       <button type="reset" className="btn btn-md btn-dark"><i class="fas fa-arrow-circle-left"></i>  Kembali</button>
                     </Link>
