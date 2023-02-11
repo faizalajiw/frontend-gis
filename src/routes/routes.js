@@ -2,9 +2,10 @@ import { Switch, Route } from "react-router-dom";
 import Login from "../pages/admin/Login";
 import PrivateRoute from "./PrivateRoutes";
 import Dashboard from "../pages/admin/dashboard/Index";
-import CategoriesIndex from "../pages/admin/categories/Index";
+import IndexCategory from "../pages/admin/categories/IndexCategory";
 import CreateCategory from "../pages/admin/categories/CreateCategory";
 import EditCategory from "../pages/admin/categories/EditCategory";
+import IndexPlaces from "../pages/admin/places/IndexPlaces";
 
 function Routes() {
   return (
@@ -23,7 +24,7 @@ function Routes() {
 
       {/* private route "/admin/categories" */}
       <PrivateRoute exact path="/admin/categories">
-        <CategoriesIndex />
+        <IndexCategory />
       </PrivateRoute>
       {/* end private route "/admin/categories" */}
 
@@ -35,6 +36,11 @@ function Routes() {
       {/* private route "/admin/categories/edit/:id" */}
       <PrivateRoute exact path="/admin/categories/edit/:id">
         <EditCategory />
+      </PrivateRoute>
+
+      {/* private route "/admin/places" */}
+      <PrivateRoute exact path="/admin/places">
+        <IndexPlaces />
       </PrivateRoute>
     </Switch>
   );
