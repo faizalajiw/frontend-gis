@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 
 export default function CreateCategory() {
-  document.title = "Kategori Admin";
+  document.title = "Kategori";
 
   //state
   const [name, setName] = useState("");
@@ -26,8 +26,8 @@ export default function CreateCategory() {
       setImage('');
 
       //show toast
-      toast.error("Format File not Supported!", {
-        duration: 4000,
+      toast.error("Format File Tidak Didukung!", {
+        duration: 3000,
         position: "top-right",
         style: {
           borderRadius: '10px',
@@ -62,7 +62,7 @@ export default function CreateCategory() {
     }).then(() => {
       //show toast
       toast.success("Berhasil Disimpan", {
-        duration: 4000,
+        duration: 3000,
         position: "top-right",
         style: {
           borderRadius: '10px',

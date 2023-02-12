@@ -9,7 +9,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default function IndexCategory() {
-  document.title = "Kategori Admin";
+  document.title = "Kategori";
   //state 
   const [categories, setCategories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
