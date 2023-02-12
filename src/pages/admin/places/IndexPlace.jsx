@@ -1,10 +1,14 @@
-import Cookies from 'js-cookie';
 import React, { useEffect, useState } from 'react'
+import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
 import Api from '../../../api';
 import LayoutAdmin from "../../../layouts/Admin";
+import PaginationComponent from '../../../components/utilities/Pagination';
+import toast from "react-hot-toast";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
-export default function IndexPlaces() {
+export default function IndexPlace() {
     document.title = "Tempat";
 
     //state
@@ -18,12 +22,12 @@ export default function IndexPlaces() {
     const token = Cookies.get("token");
 
     //function "fetchData"
-    const fetchData = async (searchData) => {
-        //define variable "searchQuery"
+    const fetchData = async (pageNumber, searchData) => {
+        const page = pageNumber ? pageNumber : currentPage;
         const searchQuery = searchData ? searchData : search;
 
         //fetching data from Rest API
-        await Api.get(`/api/admin/places?q=${searchQuery}`, {
+        await Api.get(`/api/admin/places?q=${searchQuery}&page=${page}`, {
             headers: {
                 //header Bearer + Token
                 Authorization: `Bearer ${token}`,
@@ -56,7 +60,49 @@ export default function IndexPlaces() {
         e.preventDefault();
 
         //call function "fetchDataPost"
-        fetchData(search)
+        fetchData(1, search)
+    }
+
+    //function "deletePlace"
+    const deletePlace = (id) => {
+
+        //show confirm alert
+        confirmAlert({
+            title: 'Hapus Data',
+            message: 'Ingin menghapus data?',
+            buttons: [{
+                label: 'YES',
+                onClick: async () => {
+                    await Api.delete(`/api/admin/places/${id}`, {
+                        headers: {
+                            //header Bearer + Token
+                            Authorization: `Bearer ${token}`,
+                        }
+                    })
+                        .then(() => {
+
+                            //show toast
+                            toast.success("Data berhasil dihapus", {
+                                duration: 3000,
+                                position: "top-right",
+                                style: {
+                                    borderRadius: '10px',
+                                    background: '#333',
+                                    color: '#fff',
+                                },
+                            });
+
+                            //call function "fetchData"
+                            fetchData();
+                        })
+                }
+            },
+            {
+                label: 'NO',
+                onClick: () => { }
+            }
+            ]
+        });
     }
 
     return (
@@ -96,13 +142,26 @@ export default function IndexPlaces() {
                                                     <td className="text-center">{++index + (currentPage - 1) * perPage}</td>
                                                     <td>{place.title}</td>
                                                     <td className="text-center">{place.category.name}</td>
-                                                    <td className="text-center"></td>
+                                                    <td className="text-center">
+                                                        <button
+                                                            onClick={() => deletePlace(place.id)}
+                                                            className="btn btn-sm btn-danger"><i className="fa fa-trash"></i>
+                                                        </button>
+                                                    </td>
                                                 </tr>
                                             ))}
                                         </tbody>
                                     </table>
                                 </div>
                                 {/* END TABEL */}
+
+                                <PaginationComponent
+                                    currentPage={currentPage}
+                                    perPage={perPage}
+                                    total={total}
+                                    onChange={(pageNumber) => fetchData(pageNumber)}
+                                    position="end"
+                                />
                             </div>
                         </div>
                     </div>

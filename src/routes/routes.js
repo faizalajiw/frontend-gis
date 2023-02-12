@@ -5,7 +5,8 @@ import Dashboard from "../pages/admin/dashboard/Index";
 import IndexCategory from "../pages/admin/categories/IndexCategory";
 import CreateCategory from "../pages/admin/categories/CreateCategory";
 import EditCategory from "../pages/admin/categories/EditCategory";
-import IndexPlaces from "../pages/admin/places/IndexPlaces";
+import IndexPlace from "../pages/admin/places/IndexPlace";
+import CreatePlace from "../pages/admin/places/CreatePlace";
 
 function Routes() {
   return (
@@ -40,7 +41,12 @@ function Routes() {
 
       {/* private route "/admin/places" */}
       <PrivateRoute exact path="/admin/places">
-        <IndexPlaces />
+        <IndexPlace />
+      </PrivateRoute>
+
+      {/* private route "/admin/places/create" */}
+      <PrivateRoute exact path="/admin/places/create">
+        <CreatePlace />
       </PrivateRoute>
     </Switch>
   );
