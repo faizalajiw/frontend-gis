@@ -128,7 +128,7 @@ export default function CreatePlace() {
                     <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
-                                <span className="fw-semibold"><i class="fas fa-place-of-worship me-1"></i>TAMBAH TEMPAT</span>
+                                <span className="fw-semibold"><i className="fas fa-place-of-worship me-1"></i>TAMBAH TEMPAT</span>
                             </div>
 
                             <div className="card-body">
@@ -266,7 +266,7 @@ export default function CreatePlace() {
                                         <button type="submit" className="btn btn-md btn-success me-2"><i className="fa fa-save"></i> SAVE</button>
                                         <button type="reset" className="btn btn-md btn-warning me-2"><i className="fa fa-redo"></i> RESET</button>
                                         <Link to="/admin/places">
-                                            <button type="reset" className="btn btn-md btn-dark"><i class="fas fa-arrow-circle-left"></i>  Kembali</button>
+                                            <button type="reset" className="btn btn-md btn-dark"><i className="fas fa-arrow-circle-left"></i>  Kembali</button>
                                         </Link>
                                     </div>
                                     {/* End Button */}

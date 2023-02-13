@@ -154,7 +154,7 @@ export default function EditCategory() {
                                         <button type="submit" className="btn btn-md btn-success me-2"><i className="fas fa-save"></i>  Simpan</button>
                                         <button type="reset" className="btn btn-md btn-warning me-2"><i className="fas fa-redo"></i>  Reset</button>
                                         <Link to="/admin/categories">
-                                            <button type="reset" className="btn btn-md btn-dark"><i class="fas fa-arrow-circle-left"></i>  Kembali</button>
+                                            <button type="reset" className="btn btn-md btn-dark"><i className="fas fa-arrow-circle-left"></i>  Kembali</button>
                                         </Link>
                                     </div>
                                     {/* END BUTTON */}

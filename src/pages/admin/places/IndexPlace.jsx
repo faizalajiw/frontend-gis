@@ -112,7 +112,7 @@ export default function IndexPlace() {
                     <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
-                                <span className="fw-semibold"><i class="fas fa-place-of-worship me-1"></i> TEMPAT</span>
+                                <span className="fw-semibold"><i className="fas fa-place-of-worship me-1"></i> TEMPAT</span>
                             </div>
                             <div className="card-body">
                                 {/* SEARCH BAR */}

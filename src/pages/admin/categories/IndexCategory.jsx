@@ -110,7 +110,7 @@ export default function IndexCategory() {
           <div className="col-12">
             <div className="card border-0 rounded shadow-sm border-top-success">
               <div className="card-header">
-                <span className="fw-semibold"><i class="fas fa-folder me-2"></i> KATEGORI</span>
+                <span className="fw-semibold"><i className="fas fa-folder me-2"></i> KATEGORI</span>
               </div>
               <div className="card-body">
                 {/* SEARCH */}

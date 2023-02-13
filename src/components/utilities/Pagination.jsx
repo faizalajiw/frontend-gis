@@ -11,7 +11,7 @@ function PaginationComponent(props) {
         itemsCountPerPage={props.perPage} //jumlah data per halaman
         totalItemsCount={props.total} //total data 
         onChange={props.onChange} //mengganti halaman
-        itemClasss="page-item"
+        itemClass="page-item"
         linkClass="page-link"
       />
     )
