@@ -1,11 +1,19 @@
 import Cookies from 'js-cookie';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { Link, useHistory } from 'react-router-dom';
 import Api from '../../../api';
-import LayoutAdmin from '../../../layouts/Admin'
+import LayoutAdmin from '../../../layouts/Admin';
+//mapbox gl
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+
+//mapbox gl geocoder
+import MapboxGeocoder from 'mapbox-gl-geocoder';
+
+//api key mapbox
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
 export default function CreatePlace() {
     document.title = "Tempat";
@@ -120,6 +128,60 @@ export default function CreatePlace() {
                 setValidation(error.response.data);
             })
     }
+
+    //========================= MAPBOX =========================
+    //define state
+    const mapContainer = useRef(null);
+
+    useEffect(() => {
+        //init map
+        const map = new mapboxgl.Map({
+            container: mapContainer.current,
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [longitude, latitude],
+            zoom: 12
+        });
+
+        //init geocoder
+        const geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            marker: {
+                draggable: true
+            },
+            mapboxgl: mapboxgl
+        });
+
+        //add geocoder to map
+        map.addControl(geocoder);
+
+        //init marker
+        const marker = new mapboxgl.Marker({ 
+            draggable: true, 
+            color: "rgb(0 4 45)" 
+        })
+        
+        //set longtitude and latitude
+        .setLngLat([longitude, latitude])
+        //add marker to map
+        .addTo(map);
+    
+        //geocoder result
+        geocoder.on('result', function(e) {
+            //remove marker
+            marker.remove();
+            //set longitude and latitude
+            marker.setLngLat(e.result.center).addTo(map);
+        
+            //event marker on dragend
+            marker.on('dragend', function (e) {
+                //assign longitude and latitude to state
+                setLongitude(e.target._lngLat.lng)
+                setLatitude(e.target._lngLat.lat)
+            });
+        });
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <>
@@ -239,7 +301,7 @@ export default function CreatePlace() {
                                         <div className="col-md-6">
                                             <div className="mb-3">
                                                 <label className="form-label fw-semibold">Latitude</label>
-                                                <input type="text" className="form-control" value={latitude} onChange={(e) => setLatitude(e.target.value)} placeholder="Latitude Place" />
+                                                <input type="text" className="form-control" value={latitude} onChange={(e) => setLatitude(e.target.value)} placeholder="Latitude Place" disabled />
                                             </div>
                                             {validation.latitude && (
                                                 <div className="alert alert-danger">
@@ -250,7 +312,7 @@ export default function CreatePlace() {
                                         <div className="col-md-6">
                                             <div className="mb-3">
                                                 <label className="form-label fw-semibold">Longitude</label>
-                                                <input type="text" className="form-control" value={longitude} onChange={(e) => setLongitude(e.target.value)} placeholder="Longitude Place" />
+                                                <input type="text" className="form-control" value={longitude} onChange={(e) => setLongitude(e.target.value)} placeholder="Longitude Place" disabled />
                                             </div>
                                             {validation.longitude && (
                                                 <div className="alert alert-danger">
@@ -260,6 +322,14 @@ export default function CreatePlace() {
                                         </div>
                                     </div>
                                     {/* End Latitude & Longitude */}
+                                    
+                                    {/* Mapbox */}
+                                    <div className="row mb-3">
+                                        <div className="col-md-12">
+                                            <div ref={mapContainer} className="map-container" />
+                                        </div>
+                                    </div>
+                                    {/* End Mapbox */}
 
                                     {/* Button */}
                                     <div>

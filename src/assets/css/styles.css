@@ -97,13 +97,10 @@ html:not([dir="rtl"]) .mfe-3 {
 }
 
 .border-top-success {
-  border-top: 3px solid #198754!important;  
-  /* border-top: 3px solid #00042d !important; */
+  border-top: 3px solid #198754!important;
 }
 
 .bg-light {
-  /* background: #198754!important;
-  border-top: 5px solid #ffb93a; */
   background-color: #00042d !important;
   color: white;
 }
@@ -129,40 +126,30 @@ html:not([dir="rtl"]) .mfe-3 {
 
 .btn-success {
   color: #fff;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #1F8A70;
   border-color: #1F8A70;
 }
 
 .btn-success:hover {
   color: #fff;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #136f58;
   border-color: #136f58;
 }
 
 .btn-success:active {
   color: #fff;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #1F8A70 !important;
   border-color: #1F8A70 !important;
 }
 
 .btn-success:disabled {
   color: #fff;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #00042d !important;
   border-color: #00042d !important;
 }
 
 .btn-success:focus {
   color: #fff;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #00042d !important;
   border-color: #00042d !important;
   box-shadow: none !important;
@@ -170,16 +157,12 @@ html:not([dir="rtl"]) .mfe-3 {
 
 .btn-success-dark {
   color: #19227a;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #f1f1f1;
   border-color: #f1f1f1;
 }
 
 .btn-success-dark:hover {
   color: #19227a;
-  /* background-color: #116f44;
-  border-color: #116f44; */
   background-color: #f1f1f1;
   border-color: #f1f1f1;
 }
@@ -198,7 +181,7 @@ html:not([dir="rtl"]) .mfe-3 {
 }
 
 .mapboxgl-ctrl-geocoder {
-  font: 15px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font: 15px/20px 'Poppins', sans-serif;
   position: relative;
   background-color: white;
   width: 33.3333%;
@@ -218,8 +201,6 @@ html:not([dir="rtl"]) .mfe-3 {
 }
 
 .navbar-custom {
-  /* background-color: #198754;
-  border-top: 5px solid #ffb93a; */
   background-color: #00042d;
   border-top: 5px solid #b0b6da;
 }
@@ -238,7 +219,6 @@ html:not([dir="rtl"]) .mfe-3 {
 
 .dropdown-item:hover {
   color: white;
-  /* background-color: #198754; */
   background-color: #00042d;
   border-radius: 5px;
 }
