@@ -148,9 +148,9 @@ const LayoutAdmin = ({ children }) => {
                     {/* End Tempat */}
 
                     {/* Sliders */}
-                    <NavDropdown.Item as={Link} to="/admin/sliders">
+                    {/* <NavDropdown.Item as={Link} to="/admin/sliders">
                       Sliders
-                    </NavDropdown.Item>
+                    </NavDropdown.Item> */}
                     {/* End Sliders */}
 
                     {/* Users */}
