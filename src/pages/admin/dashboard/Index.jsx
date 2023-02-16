@@ -15,7 +15,7 @@ function Dashboard() {
   const [categories, setCategories] = useState(0);
   const [places, setPlaces] = useState(0);
   const [sliders, setSliders] = useState(0);
-  const [users, setUsers] = useState(0);
+  // const [users, setUsers] = useState(0);
 
   //token
   const token = Cookies.get("token");
@@ -37,7 +37,7 @@ function Dashboard() {
     setCategories(data.categories);
     setPlaces(data.places);
     setSliders(data.sliders);
-    setUsers(data.users);
+    // setUsers(data.users);
   };
 
   useEffect(() => {
