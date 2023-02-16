@@ -50,8 +50,9 @@ function Dashboard() {
   return (
     <React.Fragment>
       <LayoutAdmin>
-        <div className="row mt-4">
-          <div className="col-12 col-lg-3 mb-4">
+        <div className="row mt-3">
+        {/* KATEGORI */}
+          <div className="col-12 col-lg-4 mb-4">
             <div className="card border-0 shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
@@ -69,7 +70,10 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-12 col-lg-3 mb-4">
+          {/* END KATEGORI */}
+
+          {/* TEMPAT */}
+          <div className="col-12 col-lg-4 mb-4">
             <div className="card border-0 rounded shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
@@ -87,7 +91,10 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-12 col-lg-3 mb-4">
+          {/* END TEMPAT */}
+
+          {/* SLIDERS */}
+          <div className="col-12 col-lg-4 mb-4">
             <div className="card border-0 rounded shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
@@ -105,7 +112,10 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="col-12 col-lg-3 mb-4">
+          {/* END SLIDERS */}
+
+          {/* USER */}
+          {/* <div className="col-12 col-lg-4 mb-4">
             <div className="card border-0 rounded shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
@@ -120,7 +130,8 @@ function Dashboard() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          {/* END USER */}
         </div>
       </LayoutAdmin>
     </React.Fragment>
