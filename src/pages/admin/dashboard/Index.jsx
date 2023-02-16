@@ -6,6 +6,7 @@ import Api from "../../../api";
 
 //js cookies
 import Cookies from "js-cookie";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   //title page
@@ -51,7 +52,7 @@ function Dashboard() {
     <React.Fragment>
       <LayoutAdmin>
         <div className="row mt-3">
-        {/* KATEGORI */}
+          {/* KATEGORI */}
           <div className="col-12 col-lg-4 mb-4">
             <div className="card border-0 shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
@@ -62,8 +63,8 @@ function Dashboard() {
                   <i className="fas fa-folder fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-dark fs-4">{categories}</div>
-                  <div className="text-muted font-weight-bold fs-6">
+                  <div className="text-value fs-4">{categories}</div>
+                  <div className="fs-5">
                     Kategori
                   </div>
                 </div>
@@ -80,11 +81,11 @@ function Dashboard() {
                   className="bg-success py-4 px-5 mfe-3"
                   style={{ width: "130px" }}
                 >
-                  <i className="fas fa-map-marked-alt fa-2x text-white"></i>
+                  <i className="fas fa-place-of-worship fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-success fs-4">{places}</div>
-                  <div className="text-muted font-weight-bold fs-6">
+                  <div className="text-value fs-4">{places}</div>
+                  <div className="fs-5">
                     Tempat
                   </div>
                 </div>
@@ -98,14 +99,14 @@ function Dashboard() {
             <div className="card border-0 rounded shadow-sm overflow-hidden">
               <div className="card-body p-0 d-flex align-items-center">
                 <div
-                  className="bg-dark py-4 px-5 mfe-3"
+                  className="bg-info py-4 px-5 mfe-3"
                   style={{ width: "130px" }}
                 >
                   <i className="fas fa-images fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-dark fs-4">{sliders}</div>
-                  <div className="text-muted font-weight-bold fs-6">
+                  <div className="text-value fs-4">{sliders}</div>
+                  <div className="fs-5">
                     Sliders
                   </div>
                 </div>
@@ -125,8 +126,8 @@ function Dashboard() {
                   <i className="fas fa-users fa-2x text-white"></i>
                 </div>
                 <div>
-                  <div className="text-value text-success fs-4">{users}</div>
-                  <div className="text-muted font-weight-bold fs-6">Users</div>
+                  <div className="text-value fs-4">{users}</div>
+                  <div className="fs-5">Users</div>
                 </div>
               </div>
             </div>
