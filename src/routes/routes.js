@@ -7,6 +7,7 @@ import CreateCategory from "../pages/admin/categories/CreateCategory";
 import EditCategory from "../pages/admin/categories/EditCategory";
 import IndexPlace from "../pages/admin/places/IndexPlace";
 import CreatePlace from "../pages/admin/places/CreatePlace";
+import EditPlace from "../pages/admin/places/EditPlace";
 
 function Routes() {
   return (
@@ -47,6 +48,11 @@ function Routes() {
       {/* private route "/admin/places/create" */}
       <PrivateRoute exact path="/admin/places/create">
         <CreatePlace />
+      </PrivateRoute>
+
+      {/* private route "/admin/places/edit/:id" */}
+      <PrivateRoute exact path="/admin/places/edit/:id">
+        <EditPlace />
       </PrivateRoute>
     </Switch>
   );
