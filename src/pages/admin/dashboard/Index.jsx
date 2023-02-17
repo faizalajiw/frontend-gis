@@ -6,7 +6,6 @@ import Api from "../../../api";
 
 //js cookies
 import Cookies from "js-cookie";
-import { Link } from "react-router-dom";
 
 function Dashboard() {
   //title page
