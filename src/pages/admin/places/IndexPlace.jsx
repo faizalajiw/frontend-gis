@@ -71,7 +71,7 @@ export default function IndexPlace() {
             title: 'Hapus Data',
             message: 'Ingin menghapus data?',
             buttons: [{
-                label: 'YES',
+                label: 'Ya',
                 onClick: async () => {
                     await Api.delete(`/api/admin/places/${id}`, {
                         headers: {
@@ -98,7 +98,7 @@ export default function IndexPlace() {
                 }
             },
             {
-                label: 'NO',
+                label: 'Batal',
                 onClick: () => { }
             }
             ]
