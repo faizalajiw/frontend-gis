@@ -108,7 +108,7 @@ const LayoutAdmin = ({ children }) => {
                 className="btn btn-success-dark"
                 onClick={sidebarToggleHandler}
               >
-                <i className="fa fa-list-ul"></i>
+                <i className="fas fa-th-large"></i>
               </button>
               {/* End Button Toggle */}
 

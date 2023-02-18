@@ -41,13 +41,13 @@ body.modal-open footer {
 
 #sidebar-wrapper {
   min-height: 100vh;
-  margin-left: -15rem;
+  margin-left: -25rem;
   transition: margin 0.25s ease-out;
 }
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 #sidebar-wrapper .list-group {
@@ -73,13 +73,13 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   }
 
   body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
-    margin-left: -15rem;
+    margin-left: -15.675rem;
   }
 }
 
 .list-group-item-light.list-group-item-action.active {
   color: #e5e5e5;
-  background-color: #00042d;
+  background-color: #061186;
   border-color: #e5e5e5;
 }
 
@@ -156,15 +156,15 @@ html:not([dir="rtl"]) .mfe-3 {
 }
 
 .btn-success-dark {
-  color: #19227a;
-  background-color: #f1f1f1;
-  border-color: #f1f1f1;
+  color: #f1f1f1;
+  background-color: #19227a;
+  /* border-color: #f1f1f1; */
 }
 
 .btn-success-dark:hover {
-  color: #19227a;
-  background-color: #f1f1f1;
-  border-color: #f1f1f1;
+  color: #f1f1f1;
+  background-color: #19227a;
+  /* border-color: #f1f1f1; */
 }
 
 .ql-editor {
