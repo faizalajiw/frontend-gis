@@ -28,7 +28,7 @@ function WebShowPlace() {
                 //set data to state "places"
                 setPlace(response.data.data);
                 //set title from state "category"
-                document.title = `${response.data.data.title})`;
+                document.title = `${response.data.data.title}`;
             });
     };
 

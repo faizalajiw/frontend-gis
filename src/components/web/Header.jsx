@@ -40,7 +40,7 @@ function Header() {
                                     ))
                                 }
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item as={Link} to="/posts/direction">Lainnya<i className="fas fa-long-arrow-alt-right"></i></NavDropdown.Item>
+                                {/* <NavDropdown.Item as={Link} to="/posts/direction">Lainnya<i className="fas fa-long-arrow-alt-right ms-2"></i></NavDropdown.Item> */}
                             </NavDropdown>
                             <Nav.Link as={Link} to="/places" className="fw-semibold text-white"><i className="fas fa-place-of-worship me-2 mx-5"></i>Tempat</Nav.Link>
                             <Nav.Link as={Link} to="/maps" className="fw-semibold text-white"><i className="fas fa-map-marker-alt me-2 mx-5"></i>Maps</Nav.Link>
