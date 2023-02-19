@@ -28,7 +28,7 @@ function Header() {
     return (
         <React.Fragment>
             <Navbar collapseOnSelect expand="lg" className="navbar-custom shadow-sm" fixed="top">
-                <Container className="py-5">
+                <Container className="py-2">
                     <Navbar.Brand as={Link} to="/" className="fw-semibold text-white me-5"><i className="fas fa-road me-1"></i>TRAVELIN</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
