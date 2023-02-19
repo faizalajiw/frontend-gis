@@ -6,7 +6,7 @@ import CardCategory from "../../../components/utilities/CardCategory";
 //import BASE URL API
 import Api from "../../../api";
 
-function Home() {
+function WebIndexHome() {
   //title page
   document.title = "Travelin";
 
@@ -29,7 +29,7 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <React.Fragment>
       <LayoutWeb>
 
         <Slider />
@@ -67,8 +67,8 @@ function Home() {
         </div>
 
       </LayoutWeb>
-    </>
+    </React.Fragment>
   );
 }
 
-export default Home;
+export default WebIndexHome;
