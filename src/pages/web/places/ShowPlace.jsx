@@ -1,5 +1,5 @@
-import React, { useEffect, useState, } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState, } from "react";
+import { Link, useParams } from "react-router-dom";
 import LayoutWeb from "../../../layouts/Web";
 
 //import BASE URL API
@@ -7,10 +7,18 @@ import Api from "../../../api";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-function WebShowPlace() {
-    const [place, setPlace] = useState({});
+//import mapbox gl
+import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
+//api key mapbox
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
+function WebShowPlace() {
+    //state place
+    const [place, setPlace] = useState({});
+    //slug params
     const { slug } = useParams();
+    //map container
+    const mapContainer = useRef(null);
 
     //function "fetchDataPlace"
     const fetchDataPlace = async () => {
@@ -32,10 +40,9 @@ function WebShowPlace() {
     }, []);
 
 
-    // react image gallery
+    //========================= GAMBAR TEMPAT =========================
     //define image array
     const images = [];
-
     //function "placeImages"
     const placeImages = () => {
         //loop data from object "place"
@@ -48,10 +55,38 @@ function WebShowPlace() {
         }
     };
 
+    //========================= MAPBOX =========================
+    //function "initMap"
+    const initMap = () => {
+        //init Map
+        const map = new mapboxgl.Map({
+            container: mapContainer.current,
+            style: "mapbox://styles/mapbox/streets-v12",
+            center: [
+                place.longitude ? place.longitude : "",
+                place.latitude ? place.latitude : "",
+            ],
+            zoom: 17,
+        });
+
+        //init popup
+        new mapboxgl.Popup({
+            closeOnClick: false
+        })
+            .setLngLat([
+                place.longitude ? place.longitude : "",
+                place.latitude ? place.latitude : "",
+            ])
+            .setHTML(`<h6>${place.title}</h6><br/><p>${place.address}</p>`)
+            .addTo(map);
+    };
+
     //hook 
     useEffect(() => {
         //call function "placeImage"
         placeImages();
+
+        initMap();
     });
 
     return (
@@ -79,7 +114,14 @@ function WebShowPlace() {
                         </div>
                         <div className="col-md-5 mb-4">
                             <div className="card border-0 rounded shadow-sm">
-                                <div className="card-body"></div>
+                                <div className="card-body">
+                                    <div ref={mapContainer} className="map-container" style={{ height: "350px" }} />
+                                    <div className="d-grid gap-2">
+                                        <Link to={`/places/${place.slug}/direction?longitude=${place.longitude}&latitude=${place.latitude}`} className="float-end btn btn-success btn-block btn-md mt-3">
+                                            <i className="fas fa-location-arrow me-2"></i>Buka Rute
+                                        </Link>
+                                    </div>
+                                </div>
                                 <hr />
                                 <div className="card-body">
                                     <div className="row">
