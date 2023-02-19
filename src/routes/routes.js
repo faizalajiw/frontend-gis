@@ -18,6 +18,7 @@ import WebShowCategory from "../pages/web/categories/ShowCategory";
 import WebIndexPlace from "../pages/web/places/IndexPlace";
 import WebShowPlace from "../pages/web/places/ShowPlace";
 import WebPlacesDirection from "../pages/web/places/Direction";
+import WebIndexMaps from "../pages/web/maps/IndexMaps";
 
 function Routes() {
   return (
@@ -101,6 +102,11 @@ function Routes() {
       {/* private route "/places/:slug/direction" */}
       <Route exact path="/places/:slug/direction">
         <WebPlacesDirection />
+      </Route>
+
+      {/* private route "/maps" */}
+      <Route exact path="/maps">
+        <WebIndexMaps />
       </Route>
       {/* END ROUTE WEB */}
     </Switch>
