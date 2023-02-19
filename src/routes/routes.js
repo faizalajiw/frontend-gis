@@ -10,6 +10,8 @@ import CreatePlace from "../pages/admin/places/CreatePlace";
 import EditPlace from "../pages/admin/places/EditPlace";
 import IndexSlider from "../pages/admin/sliders/IndexSlider";
 import CreateSlider from '../pages/admin/sliders/CreateSlider';
+import Home from "../pages/web/home/Home";
+import WebShowCategory from "../pages/web/categories/ShowCategory";
 
 function Routes() {
   return (
@@ -64,8 +66,19 @@ function Routes() {
 
       {/* private route "/admin/sliders/create" */}
       <PrivateRoute exact path="/admin/sliders/create">
-         <CreateSlider />
+        <CreateSlider />
       </PrivateRoute>
+
+      {/* route "/" */}
+      <Route exact path="/">
+        <Home />
+      </Route>
+
+      {/* private route "/category/:slug" */}
+      <Route exact path="/category/:slug">
+        <WebShowCategory />
+      </Route>
+
     </Switch>
   );
 }
