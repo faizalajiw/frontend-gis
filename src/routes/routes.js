@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router-dom";
-import Login from "../pages/admin/Login";
+// ------------------- ADMIN ----------------------
 import PrivateRoute from "./PrivateRoutes";
+import Login from "../pages/admin/Login";
 import Dashboard from "../pages/admin/dashboard/Index";
 import IndexCategory from "../pages/admin/categories/IndexCategory";
 import CreateCategory from "../pages/admin/categories/CreateCategory";
@@ -10,8 +11,11 @@ import CreatePlace from "../pages/admin/places/CreatePlace";
 import EditPlace from "../pages/admin/places/EditPlace";
 import IndexSlider from "../pages/admin/sliders/IndexSlider";
 import CreateSlider from '../pages/admin/sliders/CreateSlider';
-import Home from "../pages/web/home/Home";
+
+// ------------------- WEB ----------------------
+import WebIndexHome from "../pages/web/home/IndexHome";
 import WebShowCategory from "../pages/web/categories/ShowCategory";
+import WebIndexPlace from "../pages/web/places/IndexPlace";
 
 function Routes() {
   return (
@@ -71,12 +75,17 @@ function Routes() {
 
       {/* route "/" */}
       <Route exact path="/">
-        <Home />
+        <WebIndexHome />
       </Route>
 
       {/* private route "/category/:slug" */}
       <Route exact path="/category/:slug">
         <WebShowCategory />
+      </Route>
+
+      {/* private route "/places" */}
+      <Route exact path="/places">
+        <WebIndexPlace />
       </Route>
 
     </Switch>
