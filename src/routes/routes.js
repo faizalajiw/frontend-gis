@@ -16,10 +16,12 @@ import CreateSlider from '../pages/admin/sliders/CreateSlider';
 import WebIndexHome from "../pages/web/home/IndexHome";
 import WebShowCategory from "../pages/web/categories/ShowCategory";
 import WebIndexPlace from "../pages/web/places/IndexPlace";
+import WebShowPlace from "../pages/web/places/ShowPlace";
 
 function Routes() {
   return (
     <Switch>
+      {/* ROUTE ADMIN */}
       {/* route "/admin/login" */}
       <Route exact path="/admin/login">
         <Login />
@@ -72,7 +74,9 @@ function Routes() {
       <PrivateRoute exact path="/admin/sliders/create">
         <CreateSlider />
       </PrivateRoute>
+      {/* END ROUTE ADMIN */}
 
+      {/* ROUTE WEB */}
       {/* route "/" */}
       <Route exact path="/">
         <WebIndexHome />
@@ -88,6 +92,13 @@ function Routes() {
         <WebIndexPlace />
       </Route>
 
+      {/* private route "/places/:slug" */}
+      <Route exact path="/places/:slug">
+        <WebShowPlace />
+      </Route>
+
+      
+      {/* END ROUTE WEB */}
     </Switch>
   );
 }
