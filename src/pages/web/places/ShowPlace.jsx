@@ -132,7 +132,7 @@ function WebShowPlace() {
                                         </div>
                                         <div className="col-md-10 col-10">
                                             <div className="capt-info fw-bold">Alamat</div>
-                                            <div className="sub-title-info"><i>{place.address}</i></div>
+                                            <div className="sub-title-info">{place.address}</div>
                                         </div>
                                         <div className="col-md-2 col-2">
                                             <div className="icon-info-green">
