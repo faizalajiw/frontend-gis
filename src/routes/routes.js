@@ -17,6 +17,7 @@ import WebIndexHome from "../pages/web/home/IndexHome";
 import WebShowCategory from "../pages/web/categories/ShowCategory";
 import WebIndexPlace from "../pages/web/places/IndexPlace";
 import WebShowPlace from "../pages/web/places/ShowPlace";
+import WebPlacesDirection from "../pages/web/places/Direction";
 
 function Routes() {
   return (
@@ -97,7 +98,10 @@ function Routes() {
         <WebShowPlace />
       </Route>
 
-      
+      {/* private route "/places/:slug/direction" */}
+      <Route exact path="/places/:slug/direction">
+        <WebPlacesDirection />
+      </Route>
       {/* END ROUTE WEB */}
     </Switch>
   );
