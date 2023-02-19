@@ -38,7 +38,7 @@ function WebShowCategory() {
                 <div className="container mt-100">
                     <div className="row">
                         <div className="col-md-12 text-center">
-                            <strong><h4>Kategori {category.name}</h4></strong>
+                            <h4 className="fw-semibold">Kategori {category.name}</h4>
                             <br />
                         </div>
                         {
