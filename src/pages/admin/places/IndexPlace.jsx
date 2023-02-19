@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-export default function IndexPlace() {
+function IndexPlace() {
     document.title = "Tempat";
 
     //state
@@ -173,3 +173,5 @@ export default function IndexPlace() {
         </>
     )
 }
+
+export default IndexPlace;

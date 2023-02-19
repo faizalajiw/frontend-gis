@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
-export default function IndexCategory() {
+function IndexCategory() {
   document.title = "Kategori";
   //state 
   const [categories, setCategories] = useState([]);
@@ -172,3 +172,5 @@ export default function IndexCategory() {
     </>
   )
 }
+
+export default IndexCategory;

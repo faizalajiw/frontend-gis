@@ -14,7 +14,7 @@ import MapboxGeocoder from "mapbox-gl-geocoder";
 //api key mapbox
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX;
 
-export default function EditPlace() {
+function EditPlace() {
     document.title = "Tempat";
 
     //state form
@@ -379,3 +379,5 @@ export default function EditPlace() {
         </>
     )
 }
+
+export default EditPlace;

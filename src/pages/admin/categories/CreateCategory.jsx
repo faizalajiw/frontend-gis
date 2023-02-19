@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 
-export default function CreateCategory() {
+function CreateCategory() {
   document.title = "Kategori";
 
   //state
@@ -136,3 +136,4 @@ export default function CreateCategory() {
   )
 }
 
+export default CreateCategory;

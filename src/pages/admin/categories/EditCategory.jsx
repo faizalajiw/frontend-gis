@@ -5,7 +5,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import toast from "react-hot-toast";
 
-export default function EditCategory() {
+function EditCategory() {
     document.title = "Kategori";
 
     //state
@@ -168,3 +168,5 @@ export default function EditCategory() {
         </>
     )
 }
+
+export default EditCategory
