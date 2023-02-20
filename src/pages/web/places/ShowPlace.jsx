@@ -106,6 +106,8 @@ function WebShowPlace() {
 
                                     {/* Gambar Tempat */}
                                     <ImageGallery items={images} autoPlay={true} />
+                                    <br />
+                                    <br />
                                     <div
                                         dangerouslySetInnerHTML={{ __html: place.description }}
                                     />
