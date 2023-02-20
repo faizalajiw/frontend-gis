@@ -36,21 +36,29 @@ function WebIndexHome() {
 
         <div className="container mb-5">
           <div className="row mt-minus-87">
-            <div className="col-md-12">
-              <div className="card border-0 rounded shadow-sm">
-                <div className="card-body">
+            <div className="col-md-2"></div>
+            {/* FORM SEARCHING */}
+            <div className="col-md-8">
+              <div className="card border-0 rounded-4 shadow-sm">
+                <div className="card-body py-5 px-5">
                   <h5>
-                    <i className="fa fa-search"></i> FIND YOUR FAVORITE PLACE
+                    <i className="fas fa-search me-2"></i>Cari Tempat Pilihan Kamu
                   </h5>
-                  <p>
-                    Find your favorite place to vacation with your family!
-                  </p>
-                  <hr />
-                  <input type="text" className="form-control" placeholder="find your destination here..." />
+                  <br />
+                  <input type="text" className="form-control form-control-lg" placeholder="....." />
                 </div>
               </div>
             </div>
+            {/* END FORM SEARCHING */}
+            <div className="col-md-2"></div>
           </div>
+          {/* TITLE KATEGORI */}
+          <div className="col-md-12 mt-5 text-center">
+            <h4 className="fw-semibold">Kategori</h4>
+            <br />
+          </div>
+          {/* END TITLE KATEGORI */}
+          {/* KATEGORI */}
           <div className="row justify-content-center mt-4">
             {
               categories.map((category) => (
@@ -64,6 +72,7 @@ function WebIndexHome() {
               ))
             }
           </div>
+          {/* END KATEGORI */}
         </div>
 
       </LayoutWeb>
