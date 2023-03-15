@@ -52,8 +52,7 @@ function WebIndexPlace() {
                             <br />
                         </div>
                         {
-                            places.length > 0
-                                ? places.map((place) => (
+                            places.length > 0 ? places.map((place) => (
                                     <CardPlace
                                         key={place.id}
                                         id={place.id}
