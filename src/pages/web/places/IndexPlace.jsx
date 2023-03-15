@@ -6,7 +6,7 @@ import Api from "../../../api";
 import CardPlace from "../../../components/utilities/CardPlace";
 import PaginationComponent from "../../../components/utilities/Pagination";
 
-function WebPlaceIndex() {
+function WebIndexPlace() {
     //title page
     document.title = "Travelin - Tempat";
 
@@ -82,4 +82,4 @@ function WebPlaceIndex() {
 
 }
 
-export default WebPlaceIndex;
+export default WebIndexPlace;
