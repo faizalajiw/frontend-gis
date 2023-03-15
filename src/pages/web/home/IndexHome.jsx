@@ -51,7 +51,7 @@ function WebIndexHome() {
         <div className="container mb-5">
           <div className="row mt-minus-87">
             <div className="col-md-2"></div>
-            {/* FORM SEARCHING */}
+            {/* FORM SEARCHING */} 
             <div className="col-md-8">
               <div className="card border-0 rounded-4 shadow-sm">
                 <div className="card-body py-5 px-5">
