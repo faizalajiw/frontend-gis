@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WebFooter() {
+function Footer() {
 
     return (
         <>
@@ -16,4 +16,4 @@ function WebFooter() {
     )
 }
 
-export default WebFooter;
+export default Footer;
