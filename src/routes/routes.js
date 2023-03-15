@@ -19,6 +19,7 @@ import WebIndexPlace from "../pages/web/places/IndexPlace";
 import WebShowPlace from "../pages/web/places/ShowPlace";
 import WebPlacesDirection from "../pages/web/places/Direction";
 import WebIndexMaps from "../pages/web/maps/IndexMaps";
+import WebSearchIndex from "../pages/web/search/IndexSearch";
 
 function Routes() {
   return (
@@ -107,6 +108,11 @@ function Routes() {
       {/* private route "/maps" */}
       <Route exact path="/maps">
         <WebIndexMaps />
+      </Route>
+
+      {/* private route search */}
+      <Route exact path="/search">
+        <WebSearchIndex />
       </Route>
       {/* END ROUTE WEB */}
     </Switch>
