@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import LayoutWeb from "../../../layouts/Web";
 import Slider from '../../../components/web/Slider';
 import CardCategory from "../../../components/utilities/CardCategory";
+import { useHistory } from "react-router-dom";
 
 //import BASE URL API
 import Api from "../../../api";
@@ -10,8 +11,15 @@ function WebIndexHome() {
   //title page
   document.title = "Travelin";
 
+  //history
+  const history = useHistory();
+
   //state categories
   const [categories, setCategories] = useState([]);
+
+  //state keyword
+  const [keyword, setKeyword] = useState("");
+
   //function "fetchDataCategories"
   const fetchDataCategories = async () => {
     //fetching Rest API
@@ -27,6 +35,12 @@ function WebIndexHome() {
     //call function "fetchDataCategories"
     fetchDataCategories();
   }, []);
+
+  //function "searchHandler"
+  const searchHandler = () => {
+    //redirect with params "keyword"
+    history.push(`/search?q=${keyword}`);
+  }
 
   return (
     <React.Fragment>
@@ -45,7 +59,7 @@ function WebIndexHome() {
                     <i className="fas fa-search me-2"></i>Cari Tempat Pilihan Kamu
                   </h5>
                   <br />
-                  <input type="text" className="form-control form-control-lg" placeholder="....." />
+                  <input type="text" className="form-control form-control-lg" value={keyword} onChange={(e) => setKeyword(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && searchHandler()} placeholder="....." />
                 </div>
               </div>
             </div>

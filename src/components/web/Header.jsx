@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import { Link } from "react-router-dom";
-//import BASE URL API
+import { Navbar, Container, Nav, NavDropdown, Modal } from 'react-bootstrap';
+import { Link, useHistory } from "react-router-dom";
 import Api from "../../api";
+import Cookies from "js-cookie";
 
 function Header() {
     //state categories
     const [categories, setCategories] = useState([]);
+
+    //modal search
+    const [modal, setModal] = useState(false);
+
+    //state keyword
+    const [keyword, setKeyword] = useState("");
+
+    //history
+    const history = useHistory();
+
+    //token
+    const token = Cookies.get("token");
 
     //function "fetchDataCategories"
     const fetchDataCategories = async () => {
@@ -24,6 +36,14 @@ function Header() {
         fetchDataCategories();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    //function "searchHandler"
+    const searchHandler = () => {
+        //redirect with params "keyword"
+        history.push(`/search?q=${keyword}`);
+        //set state modal
+        setModal(false);
+    }
 
     return (
         <React.Fragment>
@@ -46,12 +66,30 @@ function Header() {
                             <Nav.Link as={Link} to="/maps" className="fw-semibold text-white"><i className="fas fa-map-marker-alt me-2 mx-5"></i>Maps</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link className="fw-semibold text-white me-4"><i className="fas fa-search me-2 mx-5"></i>Pencarian</Nav.Link>
+                            <Nav.Link onClick={() => setModal(true)} className="fw-semibold text-white me-4"><i className="fas fa-search me-2 mx-5"></i>Pencarian</Nav.Link>
                             {/* <Link to="/admin/login" className="btn btn-md btn-light"><i className="fa fa-lock me-2 mx-5"></i> LOGIN</Link> */}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <Modal
+                size="lg"
+                show={modal}
+                onHide={() => setModal(false)}
+                aria-labelledby="example-modal-sizes-title-sm"
+            >
+                <Modal.Header closeButton>
+                <Modal.Title id="example-modal-sizes-title-sm">
+                    <i className="fas fa-search me-2"></i>Pencarian
+                </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className="input-group mb-3">
+                        <input type="text" className="form-control" value={keyword} onChange={(e) => setKeyword(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && searchHandler()} placeholder="..." />
+                        <button onClick={searchHandler} type="submit" className="btn btn-md btn-success"><i className="fa fa-search"></i> SEARCH</button>
+                    </div>
+                </Modal.Body>
+            </Modal>
         </React.Fragment>
     );
 }
