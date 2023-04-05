@@ -14,6 +14,9 @@ function Header() {
     //state keyword
     const [keyword, setKeyword] = useState("");
 
+    //state user logged in
+    const [user, setUser] = useState({});
+
     //history
     const history = useHistory();
 
@@ -30,10 +33,32 @@ function Header() {
             });
     }
 
+    //function "fetchDataUser"
+    const fetchDataUser = async () => {
+
+        //fetching Rest API "user"
+        await Api.get('/api/admin/user', {
+            headers: {
+                //header Bearer + Token
+                Authorization: `Bearer ${token}`,
+            }
+        })
+        .then((response) => {
+            //set data to state
+            setUser(response.data);
+        });
+    }
+
     //hook
     useEffect(() => {
         //call function "fetchDataCategories"
         fetchDataCategories();
+
+        //if token already exists
+        if(token) {
+            //call function "fetchDataUser"
+            fetchDataUser();
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -64,10 +89,14 @@ function Header() {
                             </NavDropdown>
                             <Nav.Link as={Link} to="/places" className="fw-semibold text-white"><i className="fas fa-place-of-worship me-2 mx-5"></i>Tempat</Nav.Link>
                             <Nav.Link as={Link} to="/maps" className="fw-semibold text-white"><i className="fas fa-map-marker-alt me-2 mx-5"></i>Maps</Nav.Link>
+                            <Nav.Link onClick={() => setModal(true)} className="fw-semibold text-white me-4"><i className="fas fa-search me-2 mx-5"></i>Pencarian</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link onClick={() => setModal(true)} className="fw-semibold text-white me-4"><i className="fas fa-search me-2 mx-5"></i>Pencarian</Nav.Link>
-                            {/* <Link to="/admin/login" className="btn btn-md btn-light"><i className="fa fa-lock me-2 mx-5"></i> LOGIN</Link> */}
+                        {token 
+                            ? <Link to="/admin/dashboard" className="btn btn-md btn-light fw-semibold"><i className="fa fa-user-circle mx-1"></i> {user.name}</Link>
+                            : <Link as={Link} to="/admin/login" className="btn btn-md btn-light fw-semibold"><i className="fas fa-lock mx-1"></i>Login</Link>
+                        }
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

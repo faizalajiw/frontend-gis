@@ -11,6 +11,9 @@ import CreatePlace from "../pages/admin/places/CreatePlace";
 import EditPlace from "../pages/admin/places/EditPlace";
 import IndexSlider from "../pages/admin/sliders/IndexSlider";
 import CreateSlider from '../pages/admin/sliders/CreateSlider';
+import IndexUsers from "../pages/admin/users/IndexUsers";
+import CreateUsers from "../pages/admin/users/CreateUsers";
+import EditUsers from "../pages/admin/users/EditUsers";
 
 // ------------------- WEB ----------------------
 import WebIndexHome from "../pages/web/home/IndexHome";
@@ -76,6 +79,21 @@ function Routes() {
       {/* private route "/admin/sliders/create" */}
       <PrivateRoute exact path="/admin/sliders/create">
         <CreateSlider />
+      </PrivateRoute>
+
+      {/* private route "/admin/users" */}
+      <PrivateRoute exact path="/admin/users">
+        <IndexUsers />
+      </PrivateRoute>
+
+      {/* private route "/admin/users/create" */}
+      <PrivateRoute exact path="/admin/users/create">
+        <CreateUsers />
+      </PrivateRoute>
+
+      {/* private route "/admin/users/edit/:id" */}
+      <PrivateRoute exact path="/admin/users/edit/:id">
+        <EditUsers />
       </PrivateRoute>
       {/* END ROUTE ADMIN */}
 

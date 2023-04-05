@@ -121,6 +121,18 @@ html:not([dir="rtl"]) .mfe-3 {
   color: white;
 }
 
+.btn-light {
+  color:#00042d;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.btn-light:hover {
+  color:#fff;
+  background-color: #00042d;
+  border-radius: 5px;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #00042d;

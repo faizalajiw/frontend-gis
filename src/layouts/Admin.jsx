@@ -87,7 +87,7 @@ const LayoutAdmin = ({ children }) => {
         },
       });
       //mengarah ke halaman login
-      history.push("/admin/login");
+      history.push("/");
     });
   };
 
@@ -154,9 +154,9 @@ const LayoutAdmin = ({ children }) => {
                     {/* End Sliders */}
 
                     {/* Users */}
-                    {/* <NavDropdown.Item as={Link} to="/admin/users">
+                    <NavDropdown.Item as={Link} to="/admin/users">
                       Users
-                    </NavDropdown.Item> */}
+                    </NavDropdown.Item>
                     {/* End Users */}
                     
                     <NavDropdown.Divider />
